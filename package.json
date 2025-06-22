@@ -1,6 +1,6 @@
 {
   "name": "who-modified",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Find out who last modified a file or line using git blame",
   "type": "module",
   "bin": {
@@ -12,6 +12,9 @@
   "keywords": [
     "git",
     "blame",
+    "who",
+    "modified",
+    "line",
     "author",
     "cli",
     "devtool"
