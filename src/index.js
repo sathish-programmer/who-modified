@@ -22,19 +22,20 @@ try {
   if (line) {
     command += ` -L ${line},${line}`;
   }
+
   const output = execSync(command).toString();
 
-  const match = output.match(/^([^\s]+)\s\(([^<]+)<([^>]+)>\s+(\d{4}-\d{2}-\d{2})/);
+  const match = output.match(/\((.*?)\s+<(.+?)>\s+(\d{4}-\d{2}-\d{2})/);
 
   if (match) {
-    const [, , author, email, date] = match;
+    const [, author, email, date] = match;
     console.log(chalk.green("👤 Line last modified by:"));
     console.log(`Author: ${chalk.blue(author.trim())}`);
     console.log(`Email: ${chalk.gray(email.trim())}`);
     console.log(`Date: ${chalk.yellow(date)}`);
   } else {
-    console.log(chalk.red("No match found."));
+    console.log(chalk.red("⚠️ No match found — check if the line exists and is committed."));
   }
 } catch (error) {
-  console.error(chalk.red("Error running git blame:"), error.message);
+  console.error(chalk.red("❌ Error running git blame:"), error.message);
 }

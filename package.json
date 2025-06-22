@@ -4,10 +4,10 @@
   "description": "Find out who last modified a file or line using git blame",
   "type": "module",
   "bin": {
-    "who-modified": "./index.js"
+    "who-modified": "./src/index.js"
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "node src/index.js"
   },
   "keywords": [
     "git",
@@ -22,5 +22,7 @@
   },
   "engines": {
     "node": ">=18"
-  }
+  },
+  "author": "Sathish Kumar K",
+  "license": "MIT"
 }
