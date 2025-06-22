@@ -13,9 +13,8 @@ who-modified src/index.js --line 12
 
 Output:
 👤 Line last modified by:
-Author: Sathish Kumar K
-Email: sathish@example.com
-Date: 2024-11-19
+Author: sathish-programmer
+Date: 2025-06-22
 
 ## 🛠 Options
 Option     | Alias | Type   | Description
@@ -26,7 +25,6 @@ Option     | Alias | Type   | Description
 ## 🧠 How it works
 This tool runs `git blame` under the hood and parses the output to extract:
 - Author name
-- Email
 - Date
 
 Make sure the file and line you're checking are committed in Git, or you'll get a warning.
