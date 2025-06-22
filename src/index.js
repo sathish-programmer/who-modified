@@ -25,17 +25,17 @@ try {
 
   const output = execSync(command).toString();
 
-  const match = output.match(/\((.*?)\s+<(.+?)>\s+(\d{4}-\d{2}-\d{2})/);
+  const match = output.match(/\((.+?)\s+(\d{4}-\d{2}-\d{2})/);
 
   if (match) {
-    const [, author, email, date] = match;
+    const [, author, date] = match;
     console.log(chalk.green("👤 Line last modified by:"));
     console.log(`Author: ${chalk.blue(author.trim())}`);
-    console.log(`Email: ${chalk.gray(email.trim())}`);
     console.log(`Date: ${chalk.yellow(date)}`);
   } else {
     console.log(chalk.red("⚠️ No match found — check if the line exists and is committed."));
   }
+  
 } catch (error) {
   console.error(chalk.red("❌ Error running git blame:"), error.message);
 }
